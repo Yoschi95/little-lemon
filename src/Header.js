@@ -1,7 +1,8 @@
+
 function Header() {
     return (
         <header>
-            Header
+            <img src="./img/Logo.svg" alt="Logo of the Little Lemon restaurant"/>
         </header>
     )
 }
