@@ -23,9 +23,9 @@ function Footer() {
 
             Social Media
             <ul>
-                <li>Instagram</li>
-                <li>Facebook</li>
-                <li>LinkedIn</li>
+                <li><a href="www.instagram.com">Instagram</a></li>
+                <li><a href="www.facebook.com">Facebook</a></li>
+                <li><a href="www.linkedin.com">LinkedIn</a></li>
             </ul>
         </footer>
     )
