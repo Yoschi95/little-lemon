@@ -2,12 +2,11 @@ import './Footer.css';
 
 function Footer() {
     return (
-        <footer>
+        <footer className="footer">
             <img src="./img/Logo.svg" alt="Logo of the Little Lemon restaurant"/>
-            <br></br>
-            
-            Navigation
+
             <ul>
+                <h3>Navigation</h3>
                 <li>Home</li>
                 <li>About</li>
                 <li>Menu</li>
@@ -16,15 +15,15 @@ function Footer() {
                 <li>Login</li>
             </ul>
 
-            Contact
             <ul>
+                <h3>Contact</h3>
                 <li>Adress: First Street 1</li>
                 <li>Phone number: +123456789</li>
                 <li>Email: info@littlelemon.com</li>
             </ul>
 
-            Social Media
             <ul>
+                <h3>Social Media</h3>
                 <li><a href="www.instagram.com">Instagram</a></li>
                 <li><a href="www.facebook.com">Facebook</a></li>
                 <li><a href="www.linkedin.com">LinkedIn</a></li>

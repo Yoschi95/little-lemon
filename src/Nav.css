@@ -1,0 +1,14 @@
+.navbar {
+    padding: 2rem 0rem 0rem 0rem;
+}
+
+.navbar > ul {
+    list-style: none; /* Remove bullet points from list items */
+    text-align: center;
+}
+
+.navbar li {
+    display: inline-block; /* Changes list items from block to inline-block elements */
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
