@@ -17,7 +17,7 @@ function Footer() {
             Contact
             <ul>
                 <li>Adress: First Street 1</li>
-                <li>Phone number: 123456789</li>
+                <li>Phone number: +123456789</li>
                 <li>Email: info@littlelemon.com</li>
             </ul>
 

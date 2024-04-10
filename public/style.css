@@ -1,0 +1,28 @@
+* {
+   margin: 0;
+   border: 0;
+   font-size: 100%;
+   font: inherit;
+}
+
+body {
+    background-color: white;
+    font-family: 'Courier New', Courier, monospace;
+    min-height: 100vh;
+    margin-top: 3vh;
+    margin-bottom: 1vh;
+    margin-left: 5vw;
+    margin-right: 5vw;
+  }
+
+a {
+    text-decoration: none;
+}
+
+a:link {
+    color: rgb(0, 0, 0);
+  }
+
+a:hover {
+    color: rgb(255, 30, 30);
+}
