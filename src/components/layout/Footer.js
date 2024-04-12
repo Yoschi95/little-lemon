@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './Footer.css';
 
 function Footer() {
@@ -7,12 +8,12 @@ function Footer() {
 
             <ul>
                 <h3>Navigation</h3>
-                <li>Home</li>
-                <li>About</li>
-                <li>Menu</li>
-                <li>Reservations</li>
-                <li>Order online</li>
-                <li>Login</li>
+                <li> <Link to="/">Home</Link> </li>
+                <li> <Link to="/About">About</Link> </li>
+                <li> <Link to="/Menu">Menu</Link> </li>
+                <li> <Link to="/Reservations">Reservations</Link> </li>
+                <li> <Link to="/Order">Order</Link> </li>
+                <li> <Link to="/Login">Login</Link> </li>
             </ul>
 
             <ul>
