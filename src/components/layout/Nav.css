@@ -16,7 +16,7 @@
     place-items: center; /* shorthand for align-items and justify-items */
     text-align: center;
     padding: 0rem 0rem 0rem 0rem;
-    margin: 0rem 25vw 0rem 25vw;
+    margin: 2rem 25vw 0rem 25vw;
 }
 
 .navbar > ul {
