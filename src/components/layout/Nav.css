@@ -1,4 +1,5 @@
 .navbar {
+    grid-area: navbar;
     padding: 2rem 0rem 0rem 0rem;
 }
 
