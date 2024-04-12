@@ -1,6 +1,22 @@
 .navbar {
     grid-area: navbar;
-    padding: 2rem 0rem 0rem 0rem;
+
+    display: grid;
+    grid-template-areas:
+    
+        "home"
+        "about"
+        "menue"
+        "reservations"
+        "order"
+        "login";
+
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    place-items: center; /* shorthand for align-items and justify-items */
+    text-align: center;
+    padding: 0rem 0rem 0rem 0rem;
+    margin: 0rem 25vw 0rem 25vw;
 }
 
 .navbar > ul {
@@ -12,4 +28,57 @@
     display: inline-block; /* Changes list items from block to inline-block elements */
     margin-left: 1rem;
     margin-right: 1rem;
+}
+
+nav .home {
+    grid-area: home;
+}
+
+nav .about {
+    grid-area: about;
+}
+
+nav .menu {
+    grid-area: menue;
+}
+
+nav .reservations {
+    grid-area: reservations;
+}
+
+nav .order {
+    grid-area: order;
+}
+
+nav .login {
+    grid-area: login;
+}
+
+@media (min-width: 768px) {
+
+    .navbar {
+  
+      grid-template-areas:
+  
+        "home about menue"
+  
+        "reservations order login";
+    
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+  
+    }
+}
+
+@media (min-width: 1025px) {
+
+    .navbar {
+
+      grid-template-areas:
+
+      "home about menue reservations order login";
+
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr;
+    }
 }

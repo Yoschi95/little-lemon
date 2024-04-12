@@ -5,14 +5,12 @@ import './Nav.css';
 function Nav() {
     return (
         <nav className="navbar">
-            <ul>
-                <li> <Link to="/">Home</Link> </li>
-                <li> <Link to="/About">About</Link> </li>
-                <li> <Link to="/Menu">Menu</Link> </li>
-                <li> <Link to="/Reservations">Reservations</Link> </li>
-                <li> <Link to="/Order">Order</Link> </li>
-                <li> <Link to="/Login">Login</Link> </li>
-            </ul>
+            <div className='home'> <Link to="/">Home</Link> </div>
+            <div className='about'> <Link to="/About">About</Link> </div>
+            <div className='menu'> <Link to="/Menu">Menu</Link> </div>
+            <div className='reservations'> <Link to="/Reservations">Reservations</Link> </div>
+            <div className='order'> <Link to="/Order">Order</Link> </div>
+            <div className='login'> <Link to="/Login">Login</Link> </div>
         </nav>
     )
 }
