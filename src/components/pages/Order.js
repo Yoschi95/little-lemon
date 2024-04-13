@@ -3,7 +3,8 @@ import './Order.css';
 function Order() {
     return (
         <main className="order">
-            Order
+            <p>Welcome to the Order section!</p>
+            <p>This site is currently under construction!</p>
         </main>
     )
 }

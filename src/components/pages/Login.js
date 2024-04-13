@@ -3,7 +3,8 @@ import './Login.css';
 function Login() {
     return (
         <main className="login">
-            Login
+            <p>Welcome to the Login section!</p>
+            <p>This site is currently under construction!</p>
         </main>
     )
 }

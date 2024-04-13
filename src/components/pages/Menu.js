@@ -3,7 +3,8 @@ import './Menu.css';
 function Menu() {
     return (
         <main className="menu">
-            Menu
+            <p>Welcome to the Menu section!</p>
+            <p>This site is currently under construction!</p>
         </main>
     )
 }
