@@ -1,5 +1,45 @@
 main.home {
+    display: grid;
+    grid-template-areas: 
+        "leftSide rightSide";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
     margin: 2rem 0rem 0rem 0rem;
-    text-align: center;
+    padding: 0rem 0rem 0rem 10rem;
+    text-align: left;
     background-color: #495E57;
+}
+
+.home h1 {
+    font-size: 64px;
+    font-weight: 600;
+    color: #F4CE14;
+}
+
+.home h2 {
+    font-size: 40px;
+    font-weight: 500;
+    color: #EDEFEE;
+}
+
+.home p {
+    font-size: 18px;
+    font-weight: 100;
+    color: #EDEFEE;
+    padding: 2rem 0rem 0rem 0rem;
+}
+
+.home img {
+    margin: 2rem 0rem 0rem 5rem;
+    border-radius: 10%;
+    max-width: 70%;
+    max-height: 70%;
+}
+
+.home.leftSide {
+    grid-area: leftSide;
+}
+
+.home.leftSide {
+    grid-area: rightSide;
 }
