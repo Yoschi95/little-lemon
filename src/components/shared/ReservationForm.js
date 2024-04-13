@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import "./ReservationForm.css";
 
 const ReservationForm = () => {
 
@@ -23,7 +23,7 @@ const ReservationForm = () => {
 
   return (
 
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className='reservation-form'>
 
       <label>
         Name:
