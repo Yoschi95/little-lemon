@@ -7,5 +7,9 @@
 }
 
 .reservation-form button {
-    margin: 1rem 0rem 0rem 0rem;
+    background-color: #F4CE14;
+    border-radius: 16px;
+    margin-top: 2rem;
+    padding: 1rem 2rem 1rem 2rem;
+    font-weight: 700;
 }
