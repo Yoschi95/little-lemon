@@ -25,42 +25,37 @@ const ReservationForm = () => {
 
     <form onSubmit={handleSubmit} className='reservation-form'>
 
-      <label>
-        Name:
+      <label className="name">
+        <p>Name</p>
         <input type="text" value={name} onChange={(e) => setName(e.target.value)} required />
       </label>
 
-      <br/>
-
-      <label>
-        Date:
+      <label className="date">
+        <p>Date</p>
         <input type="date" value={date} onChange={(e) => setDate(e.target.value)} required />
       </label>
 
-      <br/>
-
-      <label>
-        Time:
+      <label className="time">
+        <p>Time</p>
         <input type="time" value={time} onChange={(e) => setTime(e.target.value)} required />
       </label>
 
-      <br/>
-
-      <label>
-        Number of Guests:
+      <label className="numofGuests">
+        <p>Number of guests</p>
         <input type="number" value={guests} onChange={(e) => setGuests(e.target.value)} min="1" required />
       </label>
 
-      <br/>
-
-      <label>
-        Occasion:
-        <input type="text" value={occasion} onChange={(e) => setOccasion(e.target.value)} required />
+      <label className="occasion">
+        <p>Occasion</p>
+        <select value={occasion} onChange={(e) => setOccasion(e.target.value)} required >
+          <option value="">--Please choose an option--</option>
+          <option value="birhtday">Birthday</option>
+          <option value="engagement">Engagement</option>
+          <option value="anniversary">Anniversary</option>
+        </select>
       </label>
 
-      <br/>
-
-      <button type="submit">Book Table</button>
+      <button type="submit" className="submitButton">Book table</button>
 
     </form>
 
