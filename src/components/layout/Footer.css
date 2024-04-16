@@ -31,6 +31,8 @@
 
 .navigation {
     grid-area: navigation;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 }
 
 .contact {
