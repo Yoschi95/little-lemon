@@ -42,7 +42,7 @@ const ReservationForm = () => {
 
       <label className="numofGuests">
         <p>Number of guests</p>
-        <input type="number" value={guests} onChange={(e) => setGuests(e.target.value)} min="1" required />
+        <input type="number" value={guests} onChange={(e) => setGuests(e.target.value)} min="1" max="20" placeholder='2' required />
       </label>
 
       <label className="occasion">
