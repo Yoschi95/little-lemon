@@ -1,12 +1,12 @@
 import './Reservations.css';
-import ReservationForm from "../shared/ReservationForm";
+import ReservationForm from "../sections/ReservationForm";
 
-function Reservations() {
+function Reservations(props) {
     return (
         <main className="reservations">
             <h1>Reservation</h1>
             <h2>Please enter the required information:</h2>
-            <ReservationForm />
+            <ReservationForm availableTimes={props.availableTimes} dispatchDate={props.dispatchDate} />
         </main>
     )
 }
