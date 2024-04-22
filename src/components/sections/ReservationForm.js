@@ -20,10 +20,10 @@ const ReservationForm = (props) => {
     
   };
     
-    const handleDateChange = (event) => {
+  const handleDateChange = (event) => {
       
-      setDate(event.target.value);
-      props.dispatchDate({date: event.target.value});
+    setDate(event.target.value);
+    props.dispatchDate({date: event.target.value});
     };
 
   return (
@@ -44,7 +44,7 @@ const ReservationForm = (props) => {
         <p>Time</p>
         <select value={time} onChange={(e) => setTime(e.target.value)} required >
         <option value="">--Please choose a time--</option>
-          {props.availableTimes.map( (time) => <option value={time}>{time}</option> )}
+          {props.availableTimes.map( (time) => <option value={time} key={time.toString()}>{time}</option> )}
         </select>
       </label>
 
