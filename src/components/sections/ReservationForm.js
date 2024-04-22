@@ -1,25 +1,30 @@
 import React, { useState } from 'react';
 import "./ReservationForm.css";
 
-const ReservationForm = () => {
-
+const ReservationForm = (props) => {
+  
   const [name, setName] = useState('');
-
+  
   const [date, setDate] = useState('');
-
+  
   const [time, setTime] = useState('');
-
+  
   const [guests, setGuests] = useState('');
-
+  
   const [occasion, setOccasion] = useState('');
-
-
+  
   const handleSubmit = (event) => {
-
-    event.preventDefault();
+    
+    event.preventDefault(); // Disable standard HTML form handling to reload the page
     console.log(`Submitting reservation for ${name} on ${date} at ${time} for ${guests} guests. Occasion: ${occasion}.`);
-
-  }
+    
+  };
+    
+    const handleDateChange = (event) => {
+      
+      setDate(event.target.value);
+      props.dispatchDate({date: event.target.value});
+    };
 
   return (
 
@@ -32,12 +37,15 @@ const ReservationForm = () => {
 
       <label className="date">
         <p>Date</p>
-        <input type="date" value={date} onChange={(e) => setDate(e.target.value)} required />
+        <input type="date" value={date} onChange={handleDateChange} required />
       </label>
 
       <label className="time">
         <p>Time</p>
-        <input type="time" value={time} onChange={(e) => setTime(e.target.value)} required />
+        <select value={time} onChange={(e) => setTime(e.target.value)} required >
+        <option value="">--Please choose a time--</option>
+          {props.availableTimes.map( (time) => <option value={time}>{time}</option> )}
+        </select>
       </label>
 
       <label className="numofGuests">
@@ -49,7 +57,7 @@ const ReservationForm = () => {
         <p>Occasion</p>
         <select value={occasion} onChange={(e) => setOccasion(e.target.value)} required >
           <option value="">--Please choose an option--</option>
-          <option value="birhtday">Birthday</option>
+          <option value="birthday">Birthday</option>
           <option value="engagement">Engagement</option>
           <option value="anniversary">Anniversary</option>
         </select>
