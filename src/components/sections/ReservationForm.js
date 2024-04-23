@@ -44,7 +44,7 @@ const ReservationForm = (props) => {
         <p>Time</p>
         <select value={time} onChange={(e) => setTime(e.target.value)} required >
         <option value="">--Please choose a time--</option>
-          {props.availableTimes.map( (time) => <option value={time} key={time.toString()}>{time}</option> )}
+        {props.availableTimes?.map( (time) => <option value={time} key={time.toString()}>{time}</option> )}
         </select>
       </label>
 
