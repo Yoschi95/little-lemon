@@ -1,4 +1,4 @@
-import React, { useReducer } from 'react';
+import React, { useState, useReducer, useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import './Main.css';
 import Home from '../pages/Home'
@@ -7,20 +7,61 @@ import Menu from '../pages/Menu'
 import Reservations from '../pages/Reservations'
 import Order from '../pages/Order'
 import Login from '../pages/Login'
+import { fetchAPI, submitAPI } from '../../utils/mockAPI'
 
 function Main() {
 
-    let arrAvailableTimes = ['17:00', '17:30', '18:00', '18:30', '19:00', '19:30', '20:00'];
+    let arrDefaultAvailableTimes = ['17:00', '17:30', '18:00', '18:30', '19:00', '19:30', '20:00'];
+
+    const [data, setData] = useState(null);
+
+    useEffect(() => {
+
+        const currentDate = new Date();
+        const currentDateFormatted = `${currentDate.getFullYear()}-${currentDate.getMonth() + 1}-${currentDate.getDate()}`;
+
+        fetchAPI(currentDateFormatted)
+
+          .then(response => response)
+
+          .then(data => {
+            dispatchDate(
+                {
+                    type: 'INITIALIZE',
+                    payload: data
+                }
+            ) 
+            setData(data)
+          })
+
+          .catch(error => console.error(error));
+
+      }, []);
+
+    if (data)
+    {
+        console.log("Fetched data successfully!");
+        console.log(JSON.stringify(data));
+    }
+
+    else
+    {
+        console.log("Loading...");
+    }
+
     const updateTimesReducer = (state, action) => {
 
-        switch (action.date) {
+        switch (action.type) {
+
+            case 'INITIALIZE':
+                return action.payload;
+
             default:
-               return state = arrAvailableTimes;
+               return state;
         }
     }
 
-    const initializeAvailableTimes = (arrAvailableTimes) => arrAvailableTimes;
-    const [availableTimes, dispatchDate] = useReducer(updateTimesReducer, arrAvailableTimes , initializeAvailableTimes);
+    const [availableTimes, dispatchDate] = useReducer(updateTimesReducer, arrDefaultAvailableTimes);
 
     return (
         <Routes>
