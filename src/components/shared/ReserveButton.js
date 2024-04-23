@@ -5,7 +5,7 @@ const ReserveButton = ({ onClick, children }) => {
 
   return (
 
-    <button onClick={onClick} className='reserve-button'>
+    <button onClick={onClick} className='reserve-button' data-testid="reservationButton">
 
       {children}
 

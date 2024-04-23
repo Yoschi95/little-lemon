@@ -16,7 +16,7 @@ function Home() {
                 <h1>Little Lemon</h1>
                 <h2>Chicago</h2>
                 <p>We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.</p>
-                <ReserveButton onClick={handleClick}> Reserve table </ReserveButton>
+                <ReserveButton onClick={handleClick} > Reserve table </ReserveButton>
             </div>
 
             <div className='rightSide'>
