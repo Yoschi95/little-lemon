@@ -1,5 +1,6 @@
 import React, { useReducer, useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
+import { fetchAPI } from '../../utils/mockAPI'
 import './Main.css';
 import Home from '../pages/Home'
 import About from '../pages/About'
@@ -7,7 +8,6 @@ import Menu from '../pages/Menu'
 import Reservations from '../pages/Reservations'
 import Order from '../pages/Order'
 import Login from '../pages/Login'
-import { fetchAPI } from '../../utils/mockAPI'
 
 function Main() {
 
@@ -125,12 +125,16 @@ function Main() {
         
       }, [availableTimesObj.triggerFetchingData]); // eslint-disable-line react-hooks/exhaustive-deps
 
+
+
+    const submitForm = () => {};
+
     return (
         <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/About" element={<About />} />
             <Route path="/Menu" element={<Menu />} />
-            <Route path="/Reservations" element={<Reservations availableTimesObj={availableTimesObj} dispatchDate={dispatchDate} />} />
+            <Route path="/Reservations" element={<Reservations availableTimesObj={availableTimesObj} dispatchDate={dispatchDate} submitForm={submitForm} />} />
             <Route path="/Order" element={<Order />} />
             <Route path="/Login" element={<Login />} />
         </Routes>
