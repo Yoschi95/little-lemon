@@ -6,7 +6,7 @@ function Reservations(props) {
         <main className="reservations">
             <h1>Reservation</h1>
             <h2>Please enter the required information:</h2>
-            <ReservationForm availableTimes={props.availableTimes} dispatchDate={props.dispatchDate} />
+            <ReservationForm availableTimesObj={props.availableTimesObj} dispatchDate={props.dispatchDate} />
         </main>
     )
 }

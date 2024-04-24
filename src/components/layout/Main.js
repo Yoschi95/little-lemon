@@ -1,4 +1,4 @@
-import React, { useState, useReducer, useEffect } from 'react';
+import React, { useReducer, useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import './Main.css';
 import Home from '../pages/Home'
@@ -7,68 +7,130 @@ import Menu from '../pages/Menu'
 import Reservations from '../pages/Reservations'
 import Order from '../pages/Order'
 import Login from '../pages/Login'
-import { fetchAPI, submitAPI } from '../../utils/mockAPI'
+import { fetchAPI } from '../../utils/mockAPI'
 
 function Main() {
 
-    let arrDefaultAvailableTimes = ['17:00', '17:30', '18:00', '18:30', '19:00', '19:30', '20:00'];
-
-    const [data, setData] = useState(null);
-
-    useEffect(() => {
-
-        const currentDate = new Date();
-        const currentDateFormatted = `${currentDate.getFullYear()}-${currentDate.getMonth() + 1}-${currentDate.getDate()}`;
-
-        fetchAPI(currentDateFormatted)
-
-          .then(response => response)
-
-          .then(data => {
-            dispatchDate(
-                {
-                    type: 'INITIALIZE',
-                    payload: data
-                }
-            ) 
-            setData(data)
-          })
-
-          .catch(error => console.error(error));
-
-      }, []);
-
-    if (data)
-    {
-        console.log("Fetched data successfully!");
-        console.log(JSON.stringify(data));
-    }
-
-    else
-    {
-        console.log("Loading...");
-    }
+    let availableTimesInitObject = { 
+        data: {
+            date: '',
+            times: ['']
+        }, 
+        triggerFetchingData: false, 
+        initialized: false,
+        error: null 
+    };
 
     const updateTimesReducer = (state, action) => {
 
         switch (action.type) {
 
-            case 'INITIALIZE':
-                return action.payload;
+            case 'FETCH_REQUEST':
+               // console.log(`Fetch request received for date: ${action.payload.date}`)
+                return { ...state, data: {date: action.payload.date}, triggerFetchingData: !state.triggerFetchingData };
+
+            case 'FETCH_SUCCESS':
+
+                return { 
+                    ...state, 
+                    data: {
+                        date: action.payload.date,
+                        times: action.payload.times
+                    }, 
+                    initialized: true,
+                    error: null
+                };
+
+            case 'FETCH_ERROR':
+                return { ...state, error: action.payload};
+
 
             default:
-               return state;
+               throw new Error("No case in updateTimesReducer hitted");
         }
     }
 
-    const [availableTimes, dispatchDate] = useReducer(updateTimesReducer, arrDefaultAvailableTimes);
+
+   const [availableTimesObj, dispatchDate] = useReducer(updateTimesReducer, availableTimesInitObject);
+
+    useEffect(() => {
+
+        if (!availableTimesObj.initialized) {
+
+            const currentDate = new Date();
+            let currentDateFormatted = '';
+
+            if (currentDate.getMonth() < 9)
+            {
+                currentDateFormatted = `${currentDate.getFullYear()}-0${currentDate.getMonth() + 1}-${currentDate.getDate()}`;
+            }
+            else
+            {
+                currentDateFormatted = `${currentDate.getFullYear()}-${currentDate.getMonth() + 1}-${currentDate.getDate()}`;
+            }
+    
+            // console.log(`Init availableTimes state for todays date: ${currentDateFormatted}`)    
+            fetchAPI(currentDateFormatted)
+    
+                .then(response => response)
+    
+                .then(fetchedData => {
+                    dispatchDate(
+                    {
+                        type: 'FETCH_SUCCESS',
+                        payload: {
+                            date: currentDateFormatted,
+                            times: fetchedData}
+                    }) 
+                })
+    
+                .catch(error => {
+                    dispatchDate(
+                    {
+                        type: 'FETCH_ERROR',
+                        payload: error
+                    }
+                )
+                    console.error(error)
+              });
+        }
+
+        else {
+
+            // console.log(`Update availableTimes state for date: ${availableTimesObj.data.date}`)
+            fetchAPI(availableTimesObj.data.date)
+    
+                .then(response => response)
+    
+                .then(fetchedData => {
+                    dispatchDate(
+                    {
+                        type: 'FETCH_SUCCESS',
+                        payload: {
+                            date: availableTimesObj.data.date,
+                            times: fetchedData}
+                    }) 
+                })
+    
+                .catch(error => {
+                    dispatchDate(
+                    {
+                        type: 'FETCH_ERROR',
+                        payload: error
+                    }
+                )
+                    console.error(error)
+              });
+        }
+        
+      }, [availableTimesObj.triggerFetchingData]); // eslint-disable-line react-hooks/exhaustive-deps
 
     return (
         <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/About" element={<About />} />
             <Route path="/Menu" element={<Menu />} />
-            <Route path="/Reservations" element={<Reservations availableTimes={availableTimes} dispatchDate={dispatchDate} />} />
+            <Route path="/Reservations" element={<Reservations availableTimesObj={availableTimesObj} dispatchDate={dispatchDate} />} />
             <Route path="/Order" element={<Order />} />
             <Route path="/Login" element={<Login />} />
         </Routes>
