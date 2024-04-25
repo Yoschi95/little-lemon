@@ -1,5 +1,11 @@
 .confirmedReservation {
-    margin: 5rem 0rem 5rem 0rem;
+    margin: 2rem 0rem 0rem 0rem;
     text-align: center;
+    background-color: #495E57;
+}
+
+.confirmedReservation h1 {
+    font-size: 64px;
+    font-weight: 600;
     color: #F4CE14;
 }

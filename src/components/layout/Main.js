@@ -1,11 +1,12 @@
 import React, { useReducer, useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { fetchAPI } from '../../utils/mockAPI'
+import { fetchAPI, submitAPI } from '../../utils/mockAPI'
 import './Main.css';
 import Home from '../pages/Home'
 import About from '../pages/About'
 import Menu from '../pages/Menu'
 import Reservations from '../pages/Reservations'
+import ConfirmedReservation from '../sections/ConfirmedReservation'
 import Order from '../pages/Order'
 import Login from '../pages/Login'
 
@@ -127,7 +128,10 @@ function Main() {
 
 
 
-    const submitForm = () => {};
+    const submitForm = (formData) => {
+        console.log('Submitted Form');
+        return submitAPI(formData);
+    };
 
     return (
         <Routes>
@@ -135,6 +139,7 @@ function Main() {
             <Route path="/About" element={<About />} />
             <Route path="/Menu" element={<Menu />} />
             <Route path="/Reservations" element={<Reservations availableTimesObj={availableTimesObj} dispatchDate={dispatchDate} submitForm={submitForm} />} />
+            <Route path="/ConfirmedReservation" element={<ConfirmedReservation />} />
             <Route path="/Order" element={<Order />} />
             <Route path="/Login" element={<Login />} />
         </Routes>
