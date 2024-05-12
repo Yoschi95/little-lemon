@@ -1,6 +1,14 @@
-# Website of the Hair Day hairdresser
-Final project of the Coursera course [HTML and CSS in depth](https://www.coursera.org/learn/html-and-css-in-depth) of the certification course [Meta Front-End Developer Professional Certificate](https://www.coursera.org/professional-certificates/meta-front-end-developer)
+# Website of the Little Lemon restaurant
+Front-End Developer Capstone project of the Coursera course [Meta Front-End Developer Professional Certificate](https://www.coursera.org/professional-certificates/meta-front-end-developer)
 
 ## HowTo get started
 
-Open the file `index.html`
+In the project directory, you first have to run the following command in a CLI of your choice, to install all dependencies:
+
+    npm install
+
+Afterwards you can run the app in the development mode with:
+
+    npm start
+
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser. 
