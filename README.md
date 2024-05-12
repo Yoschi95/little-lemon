@@ -1,5 +1,5 @@
 # Website of the Little Lemon restaurant
-Front-End Developer Capstone project of the Coursera course [Meta Front-End Developer Professional Certificate](https://www.coursera.org/professional-certificates/meta-front-end-developer)
+Final project of the Coursera course [Front-End Developer Capstone project](https://www.coursera.org/learn/meta-front-end-developer-capstone) of the certification course [Meta Front-End Developer Professional Certificate](https://www.coursera.org/professional-certificates/meta-front-end-developer)
 
 ## HowTo get started
 
