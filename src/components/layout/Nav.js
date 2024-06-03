@@ -7,10 +7,10 @@ function Nav() {
         <nav className="navbar">
             <div className='home'> <Link to="/little-lemon">Home</Link> </div>
             <div className='about'> <Link to="/little-lemon/about">About</Link> </div>
-            <div className='menu'> <Link to="/Menu">Menu</Link> </div>
-            <div className='reservations'> <Link to="/Reservations">Reservations</Link> </div>
-            <div className='order'> <Link to="/Order">Order</Link> </div>
-            <div className='login'> <Link to="/Login">Login</Link> </div>
+            <div className='menu'> <Link to="/little-lemon/menu">Menu</Link> </div>
+            <div className='reservations'> <Link to="/little-lemon/reservations">Reservations</Link> </div>
+            <div className='order'> <Link to="/little-lemon/order">Order</Link> </div>
+            <div className='login'> <Link to="/little-lemon/login">Login</Link> </div>
         </nav>
     )
 }

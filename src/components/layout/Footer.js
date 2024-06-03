@@ -8,12 +8,12 @@ function Footer() {
 
             <ul className='navigation'>
                 <h3>Navigation</h3>
-                <li> <Link to="/">Home</Link> </li>
-                <li> <Link to="/About">About</Link> </li>
-                <li> <Link to="/Menu">Menu</Link> </li>
-                <li> <Link to="/Reservations">Reservations</Link> </li>
-                <li> <Link to="/Order">Order</Link> </li>
-                <li> <Link to="/Login">Login</Link> </li>
+                <li> <Link to="/little-lemon">Home</Link> </li>
+                <li> <Link to="/little-lemon/about">About</Link> </li>
+                <li> <Link to="/little-lemon/menu">Menu</Link> </li>
+                <li> <Link to="/little-lemon/reservations">Reservations</Link> </li>
+                <li> <Link to="/little-lemon/order">Order</Link> </li>
+                <li> <Link to="/little-lemon/login">Login</Link> </li>
             </ul>
 
             <ul className='contact'>
@@ -25,9 +25,9 @@ function Footer() {
 
             <ul className='socials'>
                 <h3>Social Media</h3>
-                <li><a href="www.instagram.com">Instagram</a></li>
-                <li><a href="www.facebook.com">Facebook</a></li>
-                <li><a href="www.linkedin.com">LinkedIn</a></li>
+                <li><a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                <li><a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+                <li><a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
             </ul>
         </footer>
     )

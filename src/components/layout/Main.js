@@ -137,11 +137,11 @@ function Main() {
         <Routes>
             <Route path="/little-lemon" element={<Home />} />
             <Route path="/little-lemon/about" element={<About />} />
-            <Route path="/Menu" element={<Menu />} />
-            <Route path="/Reservations" element={<Reservations availableTimesObj={availableTimesObj} dispatchDate={dispatchDate} submitForm={submitForm} />} />
-            <Route path="/ConfirmedReservation" element={<ConfirmedReservation />} />
-            <Route path="/Order" element={<Order />} />
-            <Route path="/Login" element={<Login />} />
+            <Route path="/little-lemon/menu" element={<Menu />} />
+            <Route path="/little-lemon/reservations" element={<Reservations availableTimesObj={availableTimesObj} dispatchDate={dispatchDate} submitForm={submitForm} />} />
+            <Route path="/little-lemon/confirmedReservation" element={<ConfirmedReservation />} />
+            <Route path="/little-lemon/order" element={<Order />} />
+            <Route path="/little-lemon/login" element={<Login />} />
         </Routes>
     )
 }
