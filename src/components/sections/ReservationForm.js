@@ -19,7 +19,7 @@ const ReservationForm = (props) => {
     event.preventDefault(); // Disable standard HTML form handling to reload the page
     console.log(`Submitting reservation for ${formData.name} on ${formData.date} at ${formData.time} for ${formData.guests} guests. Occasion: ${formData.occasion}.`);
     props.submitForm(formData);
-    navigate('/ConfirmedReservation');
+    navigate('little-lemon/confirmedReservation');
   };
     
   const handleDateChange = (event) => {

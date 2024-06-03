@@ -7,7 +7,7 @@ function Home() {
     const navigate = useNavigate();
 
     const handleClick = () => {
-        navigate('/Reservations');
+        navigate('little-lemon/reservations');
     }
 
     return (
