@@ -8,7 +8,7 @@ function Footer() {
 
             <ul className='navigation'>
                 <h3>Navigation</h3>
-                <li> <Link to="/little-lemon">Home</Link> </li>
+                <li> <Link to="/little-lemon/">Home</Link> </li>
                 <li> <Link to="/little-lemon/about">About</Link> </li>
                 <li> <Link to="/little-lemon/menu">Menu</Link> </li>
                 <li> <Link to="/little-lemon/reservations">Reservations</Link> </li>

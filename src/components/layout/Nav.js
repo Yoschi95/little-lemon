@@ -5,7 +5,7 @@ import './Nav.css';
 function Nav() {
     return (
         <nav className="navbar">
-            <div className='home'> <Link to="/little-lemon">Home</Link> </div>
+            <div className='home'> <Link to="/little-lemon/">Home</Link> </div>
             <div className='about'> <Link to="/little-lemon/about">About</Link> </div>
             <div className='menu'> <Link to="/little-lemon/menu">Menu</Link> </div>
             <div className='reservations'> <Link to="/little-lemon/reservations">Reservations</Link> </div>
