@@ -136,7 +136,7 @@ function Main() {
     return (
         <Routes>
             <Route path="/little-lemon" element={<Home />} />
-            <Route path="/About" element={<About />} />
+            <Route path="/little-lemon/about" element={<About />} />
             <Route path="/Menu" element={<Menu />} />
             <Route path="/Reservations" element={<Reservations availableTimesObj={availableTimesObj} dispatchDate={dispatchDate} submitForm={submitForm} />} />
             <Route path="/ConfirmedReservation" element={<ConfirmedReservation />} />

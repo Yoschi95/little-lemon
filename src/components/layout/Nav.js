@@ -6,7 +6,7 @@ function Nav() {
     return (
         <nav className="navbar">
             <div className='home'> <Link to="/little-lemon">Home</Link> </div>
-            <div className='about'> <Link to="/About">About</Link> </div>
+            <div className='about'> <Link to="/little-lemon/about">About</Link> </div>
             <div className='menu'> <Link to="/Menu">Menu</Link> </div>
             <div className='reservations'> <Link to="/Reservations">Reservations</Link> </div>
             <div className='order'> <Link to="/Order">Order</Link> </div>
